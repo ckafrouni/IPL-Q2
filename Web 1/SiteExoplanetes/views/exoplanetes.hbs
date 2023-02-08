@@ -1,0 +1,69 @@
+<section>
+    <h2>Liste d'Exoplanètes</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Nom</th>
+            <th>hClass</th>
+            <th>Année de découverte</th>
+        </tr>
+        {{#each lst}}
+            <tr>
+                <td>{{id}}</td>
+                <td><a href="/exoplanetes/details?id={{id}}">{{uniqueName}}</a></td>
+                <td>{{hClass}}</td>
+                <td>{{discoveryYear}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</section>
+
+<section>
+    <h2>Ajouter une Exoplanète découverte</h2>
+
+    <form method="POST" action="/exoplanetes">
+        <div>
+            <label for="uniqueName">UniqueName</label>
+            <input type="text" id="uniqueName" name="uniqueName">
+        </div>
+
+        <div>
+            <label for="hClass">hClass</label>
+            <select name="hClass" class="required" id="hClass">
+                <option value="">Choose a type</option>
+                <option value="Mésoplanète">Mésoplanète</option>
+                <option value="Psychroplanète">Psychroplanète</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="discoveryYear">UniqueName</label>
+            <input type="number" name="discoveryYear" id="discoveryYear" min="0" max="2023" step="1" value="2023"/>
+        </div>
+
+        <input type="submit" value="Enregister">
+    </form>
+</section>
+
+<section>
+    <h2>Rechercher une Exoplanète</h2>
+
+    <form method="GET" action="/exoplanetes">
+        <label>
+            <input type="text" name="uniqueName">
+        </label>
+        <input type="submit" value="Rechercher">
+    </form>
+
+    {{#exists query.uniqueName}}
+        {{log query}}
+        <p>Résultats de la recherche pour '{{query.uniqueName}}'</p>
+        <ul>
+            {{#each lst as |exoplanet|}}
+                {{#if (eq exoplanet.uniqueName ../query.uniqueName)}}
+                    <li>{{exoplanet.uniqueName}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    {{/exists}}
+</section>
