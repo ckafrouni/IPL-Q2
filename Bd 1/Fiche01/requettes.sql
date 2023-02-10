@@ -1,3 +1,11 @@
+/**
+ * Requêtes de niveau 1
+ * (req. sur 1 table)
+ *
+ * auteur:	Christophe Kafrouni
+ * date:	10/02/2023
+ */
+
 -- 1
 -- Écrivez une requête SQL qui permette d'afficher tout le contenu de votre table bd1.albums.
 -- Vous trouverez le contenu complet de cette table dans l’annexe 2

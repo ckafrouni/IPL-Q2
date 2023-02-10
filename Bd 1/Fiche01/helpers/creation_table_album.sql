@@ -1,4 +1,4 @@
-CREATE TABLE bd1.album
+CREATE TABLE IF NOT EXISTS bd1.album
 (
 	isbn         CHAR(13) PRIMARY KEY,
 	titre        VARCHAR(50)      NOT NULL,

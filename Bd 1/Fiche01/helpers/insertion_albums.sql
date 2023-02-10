@@ -88,7 +88,7 @@ VALUES ('2-87097-055-9', 'Joyeux Noël, May', NULL, 'Cosey', 'Cosey', 'Cosey', '
 		12.4),
 	   ('2-8649-7266-2', 'Astérix chez les Pictes', 'Astérix', 'Ferri', 'Conrad', 'Uderzo', 'Albert René', 'fr',
 		'2013-10-24', 10.5),
-	   ('1-0347-4357-5', 'Bad cave', 'Game Over', null, 'Midam', 'Midam', 'Dupuis', 'be', '2019-10-31', 11.9),
+	   ('1-0347-4357-5', 'Bad cave', 'Game Over', NULL, 'Midam', 'Midam', 'Dupuis', 'be', '2019-10-31', 11.9),
 	   ('1-0347-4914-0', 'On ne parle pas la bouche pleine !', 'Le petit Spirou', 'Janry', 'Janry', 'Janry', 'Dupuis',
 		'be', '2022-10-14', 11.9),
 	   ('1-0347-3125-1', 'La vérité sur tout', 'Le petit Spirou', 'Janry', 'Janry', 'Janry', 'Dupuis', 'be',

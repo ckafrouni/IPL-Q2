@@ -35,7 +35,7 @@ FROM bd1.album
 WHERE editeur = 'Blake et Mortimer'
   AND date_edition >= '1990-01-01'
   AND date_edition < '2000-01-01';
--- TODO Est-ce que BETWEEN est acceptée ?
+-- Ou, en utilisant BETWEEN
 SELECT AVG(prix) prix_moyen
 FROM bd1.album
 WHERE editeur = 'Blake et Mortimer'
@@ -104,11 +104,13 @@ FROM bd1.album;
 
 -- 33
 -- Combien y a-t-il d’albums pour lesquels la série **n’est pas** spécifiée ?
--- TODO 1.33 : Peut-on répondre à cette question par un query sans clause WHERE ?
--- SOLUTION : NON
+-- Peut-on répondre à cette question par un query sans clause WHERE ?
 SELECT COUNT(*) nb_albums_sans_serie
 FROM bd1.album
 WHERE serie ISNULL;
+-- SOLUTION : OUI
+SELECT COUNT(*) - COUNT(serie) nb_albums_sans_serie
+FROM bd1.album;
 
 -- 34
 -- Donnez tous les albums dont l’ISBN commence par 2 et se termine par X (peu importe la casse).
